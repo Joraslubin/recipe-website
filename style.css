@@ -12,29 +12,37 @@
     padding:0;
 }
 
-#container {
-    width:100vw;
+
+img {
+    width:100%;
+    height: 100%;
 }
 
+
+#container {
+    width:100%;
+}
+
+
 #navbar {
-    height:10vh;
     background-color:#638889;;
     display:flex;
     justify-content:space-between;
     align-items: center;
-    color:#fff;
-    padding:3em;
-
+    color:#F9EFDB;
+    padding:1em;
+    border-bottom:1px solid #fff;
 }
+
 
 #logo-container {
     display: flex;
     align-items: center;
-    gap:.7em;
+    gap:.7rem;
 
     svg {
 
-        width:2.5em;
+        width:2.5rem;
     }
 
 }
@@ -66,7 +74,7 @@ li{
     padding:.5em;
 
     svg{
-        width:1.2em;
+        width:1.4rem;
     }
 }
 
@@ -78,13 +86,13 @@ li:hover {
 #hero-section {
     background-image: linear-gradient(
     to bottom,
-    rgb(255 255 0 / 50%),
-    rgb(255 0 0 / 50%)
+    rgb(50 0 50 / 60%),
+    rgb(0 0 0 / 60%)
   ), url("./img/recipe.jpg");
   background-size:cover;
   background-position:center;
     padding:6em 5em;
-    margin-block:.5em;
+    margin-bottom:.5em;
     color:#fff;
     text-align: center;
     font-family: 'MontSerrat';
@@ -107,14 +115,16 @@ li:hover {
 
 #content {
     width:100%;
+    min-height:100vh;
+    padding:1.5rem;
     display:flex;
     justify-content: space-between;
-    padding:3em;
 }
 
 
 #main-section {
     width:60%;
+    padding:1rem;
     
 }
 
@@ -122,12 +132,12 @@ li:hover {
     display: flex;
     width:100%;
     height:5rem;
-    margin:auto 0;
+    margin-bottom: 3rem;
 
     input {
-        width:80%;
+        width:90%;
         height:80%;
-        padding:1em;
+        padding-inline:2em;
         outline: none;
         border:1px solid #638889;
         font-size: 1.25rem;
@@ -150,11 +160,50 @@ li:hover {
          }
     }
 }
-   
+
+
+#search-results{
+    display:grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    grid-auto-rows: auto;
+    grid-gap:2rem;
+}
 
 #sidebar {
 
     width:35%;
     background-color: burlywood;
 }
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border:2px solid #9DBC98;
+    border-radius: .1rem;
+    font-family: 'MontSerrat',sans-serif;
+    max-height: 23.5rem;
+
+    .card-image-container {
+        height:70%;
+        
+    }
+
+    .recipe-details {
+        width:100%;
+        display:flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: space-around;
+        padding-left:.5em;
+    }
+
+    
+    p{
+        color:teal;
+        text-transform:uppercase;    
+    }
+
+   
+}
+
 
