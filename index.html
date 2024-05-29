@@ -1,64 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
     <div id="container">
-    <nav id="navbar">
-        <div id="logo-container">
-            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 512 512"><path fill="currentColor" d="M357.57 223.94a79.48 79.48 0 0 0 56.58-23.44l77-76.95c6.09-6.09 6.65-16 .85-22.39a16 16 0 0 0-23.17-.56l-68.63 68.58a12.29 12.29 0 0 1-17.37 0c-4.79-4.78-4.53-12.86.25-17.64l68.33-68.33a16 16 0 0 0-.56-23.16A15.62 15.62 0 0 0 440.27 56a16.7 16.7 0 0 0-11.81 4.9l-68.27 68.26a12.29 12.29 0 0 1-17.37 0c-4.78-4.78-4.53-12.86.25-17.64l68.33-68.31a16 16 0 0 0-.56-23.16A15.62 15.62 0 0 0 400.26 16a16.73 16.73 0 0 0-11.81 4.9L311.5 97.85a79.5 79.5 0 0 0-23.44 56.59v8.23a16 16 0 0 1-4.69 11.33l-35.61 35.62a4 4 0 0 1-5.66 0L68.82 36.33a16 16 0 0 0-22.58-.06C31.09 51.28 23 72.47 23 97.54c-.1 41.4 21.66 89 56.79 124.08l85.45 85.45A64.8 64.8 0 0 0 211 326a64 64 0 0 0 16.21-2.08a16.2 16.2 0 0 1 4.07-.53a15.93 15.93 0 0 1 10.83 4.25l11.39 10.52a16.12 16.12 0 0 1 4.6 11.23v5.54a47.73 47.73 0 0 0 13.77 33.65l90.05 91.57l.09.1a53.29 53.29 0 0 0 75.36-75.37L302.39 269.9a4 4 0 0 1 0-5.66L338 228.63a16 16 0 0 1 11.32-4.69Z"/><path fill="currentColor" d="M211 358a97.32 97.32 0 0 1-68.36-28.25l-13.86-13.86a8 8 0 0 0-11.3 0l-85 84.56c-15.15 15.15-20.56 37.45-13.06 59.29a31 31 0 0 0 1.49 3.6C31 484 50.58 496 72 496a55.68 55.68 0 0 0 39.64-16.44L225 365.66a4.69 4.69 0 0 0 1.32-3.72v-.26a4.63 4.63 0 0 0-5.15-4.27A97 97 0 0 1 211 358"/></svg>
-            <p id="logo-text">Recipe Realm</p>
-        </div>
-        <ul>
-            <li>
-                <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"><path fill="currentColor" d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1"/></svg>
-                <p>Home</p>
-            </li>
+        <nav id="navbar">
+            <div class="logo-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path fill="currentColor"
+                        d="M357.57 223.94a79.48 79.48 0 0 0 56.58-23.44l77-76.95c6.09-6.09 6.65-16 .85-22.39a16 16 0 0 0-23.17-.56l-68.63 68.58a12.29 12.29 0 0 1-17.37 0c-4.79-4.78-4.53-12.86.25-17.64l68.33-68.33a16 16 0 0 0-.56-23.16A15.62 15.62 0 0 0 440.27 56a16.7 16.7 0 0 0-11.81 4.9l-68.27 68.26a12.29 12.29 0 0 1-17.37 0c-4.78-4.78-4.53-12.86.25-17.64l68.33-68.31a16 16 0 0 0-.56-23.16A15.62 15.62 0 0 0 400.26 16a16.73 16.73 0 0 0-11.81 4.9L311.5 97.85a79.5 79.5 0 0 0-23.44 56.59v8.23a16 16 0 0 1-4.69 11.33l-35.61 35.62a4 4 0 0 1-5.66 0L68.82 36.33a16 16 0 0 0-22.58-.06C31.09 51.28 23 72.47 23 97.54c-.1 41.4 21.66 89 56.79 124.08l85.45 85.45A64.8 64.8 0 0 0 211 326a64 64 0 0 0 16.21-2.08a16.2 16.2 0 0 1 4.07-.53a15.93 15.93 0 0 1 10.83 4.25l11.39 10.52a16.12 16.12 0 0 1 4.6 11.23v5.54a47.73 47.73 0 0 0 13.77 33.65l90.05 91.57l.09.1a53.29 53.29 0 0 0 75.36-75.37L302.39 269.9a4 4 0 0 1 0-5.66L338 228.63a16 16 0 0 1 11.32-4.69Z" />
+                    <path fill="currentColor"
+                        d="M211 358a97.32 97.32 0 0 1-68.36-28.25l-13.86-13.86a8 8 0 0 0-11.3 0l-85 84.56c-15.15 15.15-20.56 37.45-13.06 59.29a31 31 0 0 0 1.49 3.6C31 484 50.58 496 72 496a55.68 55.68 0 0 0 39.64-16.44L225 365.66a4.69 4.69 0 0 0 1.32-3.72v-.26a4.63 4.63 0 0 0-5.15-4.27A97 97 0 0 1 211 358" />
+                </svg>
+                <p id="logo-text">Recipe Realm</p>
+            </div>
+            <ul>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1" />
+                    </svg>
+                    <p>Home</p>
+                </li>
 
-            <li>
-                <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"><path fill="currentColor" d="M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1m10 0h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1M4 21h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1m13 0c2.206 0 4-1.794 4-4s-1.794-4-4-4s-4 1.794-4 4s1.794 4 4 4"/></svg>
-                <p>Category</p>
-                <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 1024 1024"><path fill="currentColor" d="M831.872 340.864L512 652.672L192.128 340.864a30.59 30.59 0 0 0-42.752 0a29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728a30.59 30.59 0 0 0-42.752 0z"/></svg>
-            </li>
-            <li>
-                <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 64 64"><path fill="currentColor" d="M32.749 46.92c8.648 0 15.674-6.633 15.973-14.92c-.299-8.287-7.325-14.92-15.973-14.92c-8.647 0-15.675 6.633-15.97 14.92c.294 8.287 7.322 14.92 15.97 14.92"/><path fill="currentColor" d="M32.75 10c-12.15 0-22.001 9.85-22.001 22c0 12.149 9.852 22 22.001 22c12.149 0 22-9.851 22-22c0-12.15-9.851-22-22-22m-.001 38c-8.837 0-16.001-6.921-16.001-15.461c0-.182.025-.359.031-.539c-.006-.18-.031-.358-.031-.539c0-8.54 7.165-15.461 16.001-15.461c8.837 0 16 6.921 16 15.461c0 .181-.021.359-.026.539c.006.18.026.357.026.539c-.001 8.54-7.163 15.461-16 15.461"/><path fill="currentColor" d="M3.481 7.421c.24-.941.715-.011.715-.011s.166 9.74 1.246 9.846c1.08.106.248-10.022 1.526-10.216c1.188-.189.51 10.377 1.592 10.27c1.078-.114 1.26-9.85 1.26-9.85s.48-.929.717.005c2.928 11.51.559 16.215.559 16.215s-.4.989-1.35.994c-.089-.005-.022 27.336-.028 31.012c.002 1.787-5.5 1.732-5.497-.047c.004-3.676.111-31.014.025-31.012c-.953 0-1.352-.988-1.352-.988s-2.36-4.702.587-16.218M55.62 7c1.238-.003 6.374 3.7 6.38 17.462c.006 4.401-2.395 4.4-2.391 7.153c.004 2.748.019 24.606.019 24.606s-2.634 1.807-4.592-.084L55 7.391c.002.001-.005-.392.62-.391"/></svg>
-                <p>Recipes</p>
-            </li>
-            <li>
-                <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 24 24"><path fill="currentColor" d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53z"/></svg>
-                <p>Favorites</p>
-            </li>
-            <li>
-                <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 20 20"><path fill="currentColor" fill-rule="evenodd" d="m7.172 11.334l2.83 1.935l2.728-1.882l6.115 6.033c-.161.052-.333.08-.512.08H1.667c-.22 0-.43-.043-.623-.12zM20 6.376v9.457c0 .247-.054.481-.15.692l-5.994-5.914zM0 6.429l6.042 4.132l-5.936 5.858A1.663 1.663 0 0 1 0 15.833zM18.333 2.5c.92 0 1.667.746 1.667 1.667v.586L9.998 11.648L0 4.81v-.643C0 3.247.746 2.5 1.667 2.5z"/></svg>
-                <p>Contact</p>
-            </li>
-        </ul>
-    </nav>
-    <section id="hero-section">
-        <div id="hero-text">
-            <h2>Search Your Recipes</h2>
-            <em>Serving smiles, one cute dish at a time.
-            </em>
-        </div>
-    </section>
-    <section id="content">
-    <main id="main-section">
-        
-        <div id="search-container">
-            <input placeholder="Recipe name search..." id="user-input">
-            <div>
-            <svg xmlns="http://www.w3.org/2000/svg" id="search-btn" width="1em" height="1em" viewBox="0 0 24 24"><path d="m19.485 20.154l-6.262-6.262q-.75.639-1.725.989t-1.96.35q-2.402 0-4.066-1.663T3.808 9.503T5.47 5.436t4.064-1.667t4.068 1.664T15.268 9.5q0 1.042-.369 2.017t-.97 1.668l6.262 6.261zM9.539 14.23q1.99 0 3.36-1.37t1.37-3.361t-1.37-3.36t-3.36-1.37t-3.361 1.37t-1.37 3.36t1.37 3.36t3.36 1.37"/></svg>
-        </div>
-        </div>
-        <div id="search-results"></div>
-    </main>
-    <aside id="sidebar">lubin</aside>
-</section>
-</div>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1m10 0h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1M4 21h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1m13 0c2.206 0 4-1.794 4-4s-1.794-4-4-4s-4 1.794-4 4s1.794 4 4 4" />
+                    </svg>
+                    <p>Category</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+                        <path fill="currentColor"
+                            d="M831.872 340.864L512 652.672L192.128 340.864a30.59 30.59 0 0 0-42.752 0a29.12 29.12 0 0 0 0 41.6L489.664 714.24a32 32 0 0 0 44.672 0l340.288-331.712a29.12 29.12 0 0 0 0-41.728a30.59 30.59 0 0 0-42.752 0z" />
+                    </svg>
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                        <path fill="currentColor"
+                            d="M32.749 46.92c8.648 0 15.674-6.633 15.973-14.92c-.299-8.287-7.325-14.92-15.973-14.92c-8.647 0-15.675 6.633-15.97 14.92c.294 8.287 7.322 14.92 15.97 14.92" />
+                        <path fill="currentColor"
+                            d="M32.75 10c-12.15 0-22.001 9.85-22.001 22c0 12.149 9.852 22 22.001 22c12.149 0 22-9.851 22-22c0-12.15-9.851-22-22-22m-.001 38c-8.837 0-16.001-6.921-16.001-15.461c0-.182.025-.359.031-.539c-.006-.18-.031-.358-.031-.539c0-8.54 7.165-15.461 16.001-15.461c8.837 0 16 6.921 16 15.461c0 .181-.021.359-.026.539c.006.18.026.357.026.539c-.001 8.54-7.163 15.461-16 15.461" />
+                        <path fill="currentColor"
+                            d="M3.481 7.421c.24-.941.715-.011.715-.011s.166 9.74 1.246 9.846c1.08.106.248-10.022 1.526-10.216c1.188-.189.51 10.377 1.592 10.27c1.078-.114 1.26-9.85 1.26-9.85s.48-.929.717.005c2.928 11.51.559 16.215.559 16.215s-.4.989-1.35.994c-.089-.005-.022 27.336-.028 31.012c.002 1.787-5.5 1.732-5.497-.047c.004-3.676.111-31.014.025-31.012c-.953 0-1.352-.988-1.352-.988s-2.36-4.702.587-16.218M55.62 7c1.238-.003 6.374 3.7 6.38 17.462c.006 4.401-2.395 4.4-2.391 7.153c.004 2.748.019 24.606.019 24.606s-2.634 1.807-4.592-.084L55 7.391c.002.001-.005-.392.62-.391" />
+                    </svg>
+                    <p>Recipes</p>
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="currentColor"
+                            d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53z" />
+                    </svg>
+                    <p>Favorites</p>
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path fill="currentColor" fill-rule="evenodd"
+                            d="m7.172 11.334l2.83 1.935l2.728-1.882l6.115 6.033c-.161.052-.333.08-.512.08H1.667c-.22 0-.43-.043-.623-.12zM20 6.376v9.457c0 .247-.054.481-.15.692l-5.994-5.914zM0 6.429l6.042 4.132l-5.936 5.858A1.663 1.663 0 0 1 0 15.833zM18.333 2.5c.92 0 1.667.746 1.667 1.667v.586L9.998 11.648L0 4.81v-.643C0 3.247.746 2.5 1.667 2.5z" />
+                    </svg>
+                    <p>Contact</p>
+                </li>
+            </ul>
+        </nav>
+        <section id="hero-section">
+            <div id="hero-text">
+                <h2>Search Your Recipes</h2>
+                <em>Serving smiles, one cute dish at a time.
+                </em>
+            </div>
+        </section>
+        <section id="content">
+            <main id="main-section">
+
+                <div id="search-container">
+                    <input placeholder="Recipe name search..." id="user-input">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" id="search-btn" width="1em" height="1em"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="m19.485 20.154l-6.262-6.262q-.75.639-1.725.989t-1.96.35q-2.402 0-4.066-1.663T3.808 9.503T5.47 5.436t4.064-1.667t4.068 1.664T15.268 9.5q0 1.042-.369 2.017t-.97 1.668l6.262 6.261zM9.539 14.23q1.99 0 3.36-1.37t1.37-3.361t-1.37-3.36t-3.36-1.37t-3.361 1.37t-1.37 3.36t1.37 3.36t3.36 1.37" />
+                        </svg>
+                    </div>
+                </div>
+                <div id="search-results"></div>
+                <div id="featured-recipes-container"></div>
+                
+            </main>
+            <aside id="sidebar">
+
+                <div class="sidebar-title">
+                    <p>Featured articles</p>
+                </div>
+
+                <div id="featured-article-container">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" id="arrow-left" width="1em" height="1em"
+                        viewBox="0 0 20 20">
+                        <path
+                            d="M12.707 5.293a1 1 0 0 1 0 1.414L9.414 10l3.293 3.293a1 1 0 0 1-1.414 1.414l-4-4a1 1 0 0 1 0-1.414l4-4a1 1 0 0 1 1.414 0" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" id="arrow-right" width="1em" height="1em"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M9.29 6.71a.996.996 0 0 0 0 1.41L13.17 12l-3.88 3.88a.996.996 0 1 0 1.41 1.41l4.59-4.59a.996.996 0 0 0 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01" />
+                    </svg>
+
+
+                    <div id="featured-article-slider">
+
+                        <div class="article-item" data-index="0">
+                            <div>
+                                <img src="https://www.themealdb.com/images/media/meals/qtuwxu1468233098.jpg"
+                                    alt="fried chicken">
+                            </div>
+                            <div class="article-item-info">
+                                <h2>Chicken Enchilada Casserole</h2>
+                                <p>Definitiones noel ei verear intelle
+                                    gatpri civibus consequat area
+                                    refund efficiantue.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="article-item" data-index="1">
+                            <div>
+                                <img src="https://www.themealdb.com/images/media/meals/qxutws1486978099.jpg"
+                                    alt="Vegan Cake">
+                            </div>
+                            <div class="article-item-info">
+                                <h2>Vegan Chocolate Cake</h2>
+                                <p>Definitiones noel ei verear intelle
+                                    gatpri civibus consequat area
+                                    refund efficiantue.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="article-item" data-index="2">
+                            <div>
+                                <img src="https://www.themealdb.com/images/media/meals/1543774956.jpg"
+                                    alt="Cream cheese pastries">
+                            </div>
+                            <div class="article-item-info">
+                                <h2>Fruit and Cream Cheese Breakfast Pastries</h2>
+                                <p>Definitiones noel ei verear intelle
+                                    gatpri civibus consequat area
+                                    refund efficiantue.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="article-item" data-index="3">
+                            <div>
+                                <img src="https://www.themealdb.com/images/media/meals/xr0n4r1576788363.jpg"
+                                    alt="lasagna sandwiches">
+                            </div>
+                            <div class="article-item-info">
+                                <h2>Lasagna Sandwiches</h2>
+                                <p>Definitiones noel ei verear intelle
+                                    gatpri civibus consequat area
+                                    refund efficiantue.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="article-item" data-index="4">
+                            <div>
+                                <img src="https://www.themealdb.com/images/media/meals/uvuyxu1503067369.jpg"
+                                    alt="tacos">
+                            </div>
+                            <div class="article-item-info">
+                                <h2>Cajun spiced fish tacos</h2>
+                                <p>Definitiones noel ei verear intelle
+                                    gatpri civibus consequat area
+                                    refund efficiantue.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="subscribe-newsletter-container">
+                    <div>
+                        <h2>get latest updates</h2>
+                        <p>Newsletter Subscribe</p>
+                    </div>
+                    <input type="email" placeholder="Enter your email address">
+                    <button>subscribe</button>
+                </div>
+
+                <div class="sidebar-title">
+                    <p>Subscribe & Follow</p>
+                </div>
+                <div id="subscribe-follow-container">
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="0.63em" height="1em"
+                            viewBox="0 0 320 512">
+                            <path fill="currentColor"
+                                d="M80 299.3V512h116V299.3h86.5l18-97.8H196v-34.6c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4.4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8z" />
+                        </svg></a>
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="0.88em" height="1em"
+                            viewBox="0 0 448 512">
+                            <path fill="currentColor"
+                                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9S287.7 141 224.1 141m0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7s74.7 33.5 74.7 74.7s-33.6 74.7-74.7 74.7m146.4-194.3c0 14.9-12 26.8-26.8 26.8c-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8s26.8 12 26.8 26.8m76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9c-26.2-26.2-58-34.4-93.9-36.2c-37-2.1-147.9-2.1-184.9 0c-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9c1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0c35.9-1.7 67.7-9.9 93.9-36.2c26.2-26.2 34.4-58 36.2-93.9c2.1-37 2.1-147.8 0-184.8M398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6c-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6c-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6c29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6c11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1" />
+                        </svg></a>
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="0.88em" height="1em"
+                            viewBox="0 0 448 512">
+                            <path fill="currentColor"
+                                d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3M447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2c-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3c94 0 111.28 61.9 111.28 142.3V448z" />
+                        </svg></a>
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
+                            <path fill="currentColor"
+                                d="M389.2 48h70.6L305.6 224.2L487 464H345L233.7 318.6L106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z" />
+                        </svg></a>
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="0.75em" height="1em"
+                            viewBox="0 0 384 512">
+                            <path fill="currentColor"
+                                d="M204 6.5C101.4 6.5 0 74.9 0 185.6C0 256 39.6 296 63.6 296c9.9 0 15.6-27.6 15.6-35.4c0-9.3-23.7-29.1-23.7-67.8c0-80.4 61.2-137.4 140.4-137.4c68.1 0 118.5 38.7 118.5 109.8c0 53.1-21.3 152.7-90.3 152.7c-24.9 0-46.2-18-46.2-43.8c0-37.8 26.4-74.4 26.4-113.4c0-66.2-93.9-54.2-93.9 25.8c0 16.8 2.1 35.4 9.6 50.7c-13.8 59.4-42 147.9-42 209.1c0 18.9 2.7 37.5 4.5 56.4c3.4 3.8 1.7 3.4 6.9 1.5c50.4-69 48.6-82.5 71.4-172.8c12.3 23.4 44.1 36 69.3 36c106.2 0 153.9-103.5 153.9-196.8C384 71.3 298.2 6.5 204 6.5" />
+                        </svg></a>
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="1.13em" height="1em"
+                            viewBox="0 0 576 512">
+                            <path fill="currentColor"
+                                d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597c-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821c11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305m-317.51 213.508V175.185l142.739 81.205z" />
+                        </svg></a>
+
+                </div>
+                <div class="sidebar-title">
+                    <p>Instagram</p>
+                </div>
+                <div id="instagram-image-container">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1568827999250-3f6afff96e66?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNha2V8ZW58MHwwfDB8fHww"
+                            alt="">
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGFzdGF8ZW58MHwwfDB8fHww"
+                            alt="">
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1619895092538-128341789043?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFzYWduYXxlbnwwfDB8MHx8fDA%3D"
+                            alt="">
+                    </div>
+                    <div>
+                        <img
+                            src="https://images.unsplash.com/photo-1645371958635-88dd6c8e1be7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzV8fGNoaWNrZW4lMjB3aW5nc3xlbnwwfDB8MHx8fDA%3D">
+                    </div>
+                    <div>
+                        <img
+                            src="https://images.unsplash.com/photo-1569229490681-4085b3f54ba3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fHN0ZWFrfGVufDB8MHwwfHx8MA%3D%3D">
+                    </div>
+                    <div>
+                        <img
+                            src="https://images.unsplash.com/photo-1528738064262-9f834cbdfda1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fHBhc3RhfGVufDB8MHwwfHx8MA%3D%3D">
+                    </div>
+                    <div>
+                        <img
+                            src="https://images.unsplash.com/photo-1587306433556-18d035a3ed97?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fGRlc3NlcnR8ZW58MHwwfDB8fHww">
+                    </div>
+                    <div>
+                        <img
+                            src="https://images.unsplash.com/photo-1621800971860-72ffb1a83f6b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTR8fHZlZ2FuJTIwZm9vZHxlbnwwfDB8MHx8fDA%3D">
+                    </div>
+                    <div>
+                        <img
+                            src="https://images.unsplash.com/photo-1618666185600-1f9f09d5eb2c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTYwfHxicmVha2Zhc3QlMjBkaXNofGVufDB8MHwwfHx8MA%3D%3D">
+                    </div>
+                </div>
+                <div class="sidebar-title">
+                    <p>Popular Tags</p>
+                </div>
+                <div id="popular-tags-container">
+                    <div>Pasta</div>
+                    <div>Beef</div>
+                    <div>Breakfast</div>
+                    <div>Vegan</div>
+                    <div>Dessert</div>
+                    <div>Chicken</div>
+                    <div>Seafood</div>
+                    <div>Pork</div>
+                    <div>Dinner</div>
+
+                </div>
+            </aside>
+        </section>
+        <footer>
+            <div class="logo-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path fill="currentColor"
+                        d="M357.57 223.94a79.48 79.48 0 0 0 56.58-23.44l77-76.95c6.09-6.09 6.65-16 .85-22.39a16 16 0 0 0-23.17-.56l-68.63 68.58a12.29 12.29 0 0 1-17.37 0c-4.79-4.78-4.53-12.86.25-17.64l68.33-68.33a16 16 0 0 0-.56-23.16A15.62 15.62 0 0 0 440.27 56a16.7 16.7 0 0 0-11.81 4.9l-68.27 68.26a12.29 12.29 0 0 1-17.37 0c-4.78-4.78-4.53-12.86.25-17.64l68.33-68.31a16 16 0 0 0-.56-23.16A15.62 15.62 0 0 0 400.26 16a16.73 16.73 0 0 0-11.81 4.9L311.5 97.85a79.5 79.5 0 0 0-23.44 56.59v8.23a16 16 0 0 1-4.69 11.33l-35.61 35.62a4 4 0 0 1-5.66 0L68.82 36.33a16 16 0 0 0-22.58-.06C31.09 51.28 23 72.47 23 97.54c-.1 41.4 21.66 89 56.79 124.08l85.45 85.45A64.8 64.8 0 0 0 211 326a64 64 0 0 0 16.21-2.08a16.2 16.2 0 0 1 4.07-.53a15.93 15.93 0 0 1 10.83 4.25l11.39 10.52a16.12 16.12 0 0 1 4.6 11.23v5.54a47.73 47.73 0 0 0 13.77 33.65l90.05 91.57l.09.1a53.29 53.29 0 0 0 75.36-75.37L302.39 269.9a4 4 0 0 1 0-5.66L338 228.63a16 16 0 0 1 11.32-4.69Z" />
+                    <path fill="currentColor"
+                        d="M211 358a97.32 97.32 0 0 1-68.36-28.25l-13.86-13.86a8 8 0 0 0-11.3 0l-85 84.56c-15.15 15.15-20.56 37.45-13.06 59.29a31 31 0 0 0 1.49 3.6C31 484 50.58 496 72 496a55.68 55.68 0 0 0 39.64-16.44L225 365.66a4.69 4.69 0 0 0 1.32-3.72v-.26a4.63 4.63 0 0 0-5.15-4.27A97 97 0 0 1 211 358" />
+                </svg>
+                <p id="logo-text">Recipe Realm</p>
+            </div>
+            <div class="social-media">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="0.88em" height="1em" viewBox="0 0 448 512">
+                        <path fill="currentColor"
+                            d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9S287.7 141 224.1 141m0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7s74.7 33.5 74.7 74.7s-33.6 74.7-74.7 74.7m146.4-194.3c0 14.9-12 26.8-26.8 26.8c-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8s26.8 12 26.8 26.8m76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9c-26.2-26.2-58-34.4-93.9-36.2c-37-2.1-147.9-2.1-184.9 0c-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9c1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0c35.9-1.7 67.7-9.9 93.9-36.2c26.2-26.2 34.4-58 36.2-93.9c2.1-37 2.1-147.8 0-184.8M398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6c-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6c-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6c29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6c11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1" />
+                    </svg>
+                    <p>Instagram</p>
+                </a>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="0.88em" height="1em" viewBox="0 0 448 512">
+                        <path fill="currentColor"
+                            d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3M447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2c-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3c94 0 111.28 61.9 111.28 142.3V448z" />
+                    </svg>
+                    <p>LinkedIn</p>
+                </a>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512">
+                        <path fill="currentColor"
+                            d="M389.2 48h70.6L305.6 224.2L487 464H345L233.7 318.6L106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z" />
+                    </svg>
+                    <p>Twitter</p>
+                </a>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="0.75em" height="1em" viewBox="0 0 384 512">
+                        <path fill="currentColor"
+                            d="M204 6.5C101.4 6.5 0 74.9 0 185.6C0 256 39.6 296 63.6 296c9.9 0 15.6-27.6 15.6-35.4c0-9.3-23.7-29.1-23.7-67.8c0-80.4 61.2-137.4 140.4-137.4c68.1 0 118.5 38.7 118.5 109.8c0 53.1-21.3 152.7-90.3 152.7c-24.9 0-46.2-18-46.2-43.8c0-37.8 26.4-74.4 26.4-113.4c0-66.2-93.9-54.2-93.9 25.8c0 16.8 2.1 35.4 9.6 50.7c-13.8 59.4-42 147.9-42 209.1c0 18.9 2.7 37.5 4.5 56.4c3.4 3.8 1.7 3.4 6.9 1.5c50.4-69 48.6-82.5 71.4-172.8c12.3 23.4 44.1 36 69.3 36c106.2 0 153.9-103.5 153.9-196.8C384 71.3 298.2 6.5 204 6.5" />
+                    </svg>
+                    <p>Pinterest</p>
+                </a>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.13em" height="1em" viewBox="0 0 576 512">
+                        <path fill="currentColor"
+                            d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597c-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821c11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305m-317.51 213.508V175.185l142.739 81.205z" />
+                    </svg>
+                    <p>Youtube</p>
+                </a>
+            </div>
+            <p>© Copyright 2024</p>
+        </footer>
+    </div>
     <script src="script.js"></script>
 </body>
+
 </html>

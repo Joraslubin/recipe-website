@@ -2,6 +2,13 @@
 const searchBtn = document.querySelector("#search-btn")
 const userInput = document.querySelector("#user-input")
 const resultsContainer = document.querySelector("#search-results")
+const slider = document.getElementById("featured-article-slider")
+let index = 0;
+let interval;
+let paused = false;
+
+
+
 
 class Card {
 
@@ -17,9 +24,9 @@ class Card {
         /* function to limit the length of the meal title */
         const formatName = (name) => name.indexOf(",") === -1 ? name : name.slice(0,name.indexOf(",")) 
         
-        const cardElement = `<div class="card">
-            <div class='card-image-container'>
-            <img src='${this.image}' alt='${this.name}'>
+        const cardElement = `<div class="card-main">
+            <div class='card-main-image-container'>
+            <img src='${this.image}/preview' alt='${this.name}'>
             </div>
             <div class='recipe-details'>
             <p class='dish-origin'>${this.origin}</p>
@@ -28,12 +35,12 @@ class Card {
             </div>
             </div>`
 
-            
-            resultsContainer.innerHTML += cardElement
-            
-
+            resultsContainer.innerHTML += cardElement          
     }
 }
+
+
+
 
 const showRecipe = (data) => {
 
@@ -45,8 +52,9 @@ const showRecipe = (data) => {
 
         card.display()
 
-    }
+    }  
 }
+
 
 const searchRecipe = async () => {
 
@@ -73,3 +81,73 @@ const searchRecipe = async () => {
 }
 
 searchBtn.addEventListener("click", searchRecipe)
+window.addEventListener("keydown",({key})=>{
+    
+    key === "Enter" ? searchRecipe() : ''
+})
+
+
+
+/*slide between card in the sidebar manually*/
+
+document.querySelectorAll("#featured-article-container > svg").forEach(icon=>{
+    
+    icon.addEventListener("click",e=>{
+        
+        const targetElement = e.target
+        
+
+        if (targetElement.id === "arrow-right"){
+
+            paused = true
+
+            index = index < 4 ? index + 1 : 4 ;
+
+         slider.style.transform = `translateX(${index * (-20)}%)` 
+
+         setTimeout(()=>{ paused=false },5000)
+        }
+
+        else{
+
+            paused = true
+
+            index = index > 0 ? index - 1 : 0 ;
+
+            slider.style.transform = `translateX(${index * (-20)}%)`
+            setTimeout(()=>{paused=false},5000)
+        }
+    })
+})
+
+/* slide between card in the sidebar automatically*/
+
+const slide = () => {
+
+    slider.style.transform = `translateX(-20%)`
+    console.log(index)
+}
+
+function reArrange() {
+    
+    slider.append(slider.firstElementChild);
+    index = Number(slider.firstElementChild.dataset.index)
+    slider.style.transition = 'none'
+    slider.style.transform = "translateX(0)";
+    setTimeout(()=>{
+      slider.style.transition = 'transform 1s'
+    },0)
+    
+  }
+  
+  slider.addEventListener("transitionend", reArrange)
+  
+  if(paused===false){
+
+        interval = setInterval(slide,5000)
+  }
+  else {
+   
+    clearInterval(interval)
+  
+}
