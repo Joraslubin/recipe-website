@@ -1,0 +1,63 @@
+{ "meals":[
+    {
+        "id": "53036",
+        "img": "https://www.themealdb.com/images/media/meals/naqyel1608588563.jpg",
+        "name": "Boxty Breakfast",
+        "origin": "Irish"
+    },
+    {
+        "id": "53057",
+        "img": "https://www.themealdb.com/images/media/meals/n1hcou1628770088.jpg",
+         "name": "Traditional Croatian Goulash", 
+         "origin": "Croatian"
+    },
+    {
+        "id": "52776",
+        "img": "https://www.themealdb.com/images/media/meals/tqtywx1468317395.jpg", 
+        "name": "Chocolate Gateau", 
+        "origin": "French"
+    },
+    {
+        "id": "52781",
+        "img": "https://www.themealdb.com/images/media/meals/sxxpst1468569714.jpg", 
+        "name": "Irish stew", 
+        "origin": "Irish"
+    },
+    {
+        "id": "52896",
+        "img": "https://www.themealdb.com/images/media/meals/sqrtwu1511721265.jpg",
+        "name": "Full English Breakfast", 
+        "origin": "British"
+    },
+    {
+        "id": "52890",
+        "img": "https://www.themealdb.com/images/media/meals/ysqupp1511640538.jpg", 
+        "name": "Jam Roly-Poly",
+        "origin": "British"
+    },
+    {   
+        "id": "52999",
+        "img": "https://www.themealdb.com/images/media/meals/st1ifa1583267248.jpg", 
+        "name": "Crispy Sausages and Greens", 
+        "origin": "Irish"
+    },
+    {
+        "id": "52775",
+        "img": "https://www.themealdb.com/images/media/meals/rvxxuy1468312893.jpg", 
+        "name": "Vegan Lasagna",
+     "origin": "Italian"
+    },
+    {
+        "id": "52764",
+        "img": "https://www.themealdb.com/images/media/meals/wuvryu1468232995.jpg",
+        "name": "Garides Saganaki", 
+        "origin": "Greek"
+    },
+    {
+        "id": "52924",
+        "img": "https://www.themealdb.com/images/media/meals/vwuprt1511813703.jpg", 
+        "name": "Nanaimo Bars", 
+        "origin": "Canadian"
+    }
+]
+}

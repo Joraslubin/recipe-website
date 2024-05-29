@@ -3,13 +3,36 @@ const searchBtn = document.querySelector("#search-btn")
 const userInput = document.querySelector("#user-input")
 const resultsContainer = document.querySelector("#search-results")
 const slider = document.getElementById("featured-article-slider")
+const featuredRecipeTemplate = document.querySelector("#featured-recipe-template")
+const featuredRecipeContainer = document.querySelector("#featured-recipes-container")
 let index = 0;
 let interval;
 let paused = false;
 
 
+/* Display featured recipes at homepage */
+fetch("./featured-recipes.json")
+.then(res=>res.json())
+.then(data=>{
+
+    const recipes = data.meals
+
+    recipes.forEach(recipe =>{
+
+        const clone = featuredRecipeTemplate.content.cloneNode(true)
+        container.dataset.id = recipe.id
+
+        clone.querySelector(".meal-image").src = recipe.img
+        clone.querySelector(".meal-title").innerText = recipe.name;
+        clone.querySelector(".meal-origin").innerText = recipe.origin
+
+        featuredRecipeContainer.appendChild(clone)
+        
+    })
+})
 
 
+/* Create search results cards */
 class Card {
 
     constructor({ strMeal, strMealThumb, strCategory, strArea }) {
@@ -22,8 +45,8 @@ class Card {
     display() {
 
         /* function to limit the length of the meal title */
-        const formatName = (name) => name.indexOf(",") === -1 ? name : name.slice(0,name.indexOf(",")) 
-        
+        const formatName = (name) => name.indexOf(",") === -1 ? name : name.slice(0, name.indexOf(","))
+
         const cardElement = `<div class="card-main">
             <div class='card-main-image-container'>
             <img src='${this.image}/preview' alt='${this.name}'>
@@ -35,7 +58,7 @@ class Card {
             </div>
             </div>`
 
-            resultsContainer.innerHTML += cardElement          
+        resultsContainer.innerHTML += cardElement
     }
 }
 
@@ -52,7 +75,7 @@ const showRecipe = (data) => {
 
         card.display()
 
-    }  
+    }
 }
 
 
@@ -81,8 +104,8 @@ const searchRecipe = async () => {
 }
 
 searchBtn.addEventListener("click", searchRecipe)
-window.addEventListener("keydown",({key})=>{
-    
+window.addEventListener("keydown", ({ key }) => {
+
     key === "Enter" ? searchRecipe() : ''
 })
 
@@ -90,32 +113,32 @@ window.addEventListener("keydown",({key})=>{
 
 /*slide between card in the sidebar manually*/
 
-document.querySelectorAll("#featured-article-container > svg").forEach(icon=>{
-    
-    icon.addEventListener("click",e=>{
-        
+document.querySelectorAll("#featured-article-container > svg").forEach(icon => {
+
+    icon.addEventListener("click", e => {
+
         const targetElement = e.target
-        
 
-        if (targetElement.id === "arrow-right"){
 
-            paused = true
-
-            index = index < 4 ? index + 1 : 4 ;
-
-         slider.style.transform = `translateX(${index * (-20)}%)` 
-
-         setTimeout(()=>{ paused=false },5000)
-        }
-
-        else{
+        if (targetElement.id === "arrow-right") {
 
             paused = true
 
-            index = index > 0 ? index - 1 : 0 ;
+            index = index < 4 ? index + 1 : 4;
 
             slider.style.transform = `translateX(${index * (-20)}%)`
-            setTimeout(()=>{paused=false},5000)
+
+            setTimeout(() => { paused = false }, 1000)
+        }
+
+        else {
+
+            paused = true
+
+            index = index > 0 ? index - 1 : 0;
+
+            slider.style.transform = `translateX(${index * (-20)}%)`
+            setTimeout(() => { paused = false }, 1000)
         }
     })
 })
@@ -125,29 +148,28 @@ document.querySelectorAll("#featured-article-container > svg").forEach(icon=>{
 const slide = () => {
 
     slider.style.transform = `translateX(-20%)`
-    console.log(index)
+
 }
 
 function reArrange() {
-    
+
     slider.append(slider.firstElementChild);
-    index = Number(slider.firstElementChild.dataset.index)
     slider.style.transition = 'none'
     slider.style.transform = "translateX(0)";
-    setTimeout(()=>{
-      slider.style.transition = 'transform 1s'
-    },0)
-    
-  }
-  
-  slider.addEventListener("transitionend", reArrange)
-  
-  if(paused===false){
+    setTimeout(() => {
+        slider.style.transition = 'transform 1s'
+    }, 0)
 
-        interval = setInterval(slide,5000)
-  }
-  else {
-   
+}
+
+slider.addEventListener("transitionend", reArrange)
+
+if (paused === false) {
+
+    interval = setInterval(slide, 5000)
+}
+else {
+
     clearInterval(interval)
-  
+
 }
