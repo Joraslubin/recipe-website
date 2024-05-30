@@ -5,6 +5,7 @@ const resultsContainer = document.querySelector("#search-results")
 const slider = document.getElementById("featured-article-slider")
 const featuredRecipeTemplate = document.querySelector("#featured-recipe-template")
 const featuredRecipeContainer = document.querySelector("#featured-recipes-container")
+const contentHeader = document.querySelector("#content-header > span")
 let index = 0;
 let interval;
 let paused = false;
@@ -12,30 +13,31 @@ let paused = false;
 
 /* Display featured recipes at homepage */
 fetch("./featured-recipes.json")
-.then(res=>res.json())
-.then(data=>{
+    .then(res => res.json())
+    .then(data => {
 
-    const recipes = data.meals
+        const recipes = data.meals
 
-    recipes.forEach(recipe =>{
+        recipes.forEach(recipe => {
 
-        const clone = featuredRecipeTemplate.content.cloneNode(true)
-        container.dataset.id = recipe.id
+            const clone = featuredRecipeTemplate.content.cloneNode(true)
+            clone.firstElementChild.dataset.id = recipe.id
 
-        clone.querySelector(".meal-image").src = recipe.img
-        clone.querySelector(".meal-title").innerText = recipe.name;
-        clone.querySelector(".meal-origin").innerText = recipe.origin
+            clone.querySelector(".meal-image").src = recipe.img
+            clone.querySelector(".meal-title").innerText = recipe.name;
+            clone.querySelector(".meal-origin").innerText = recipe.origin
 
-        featuredRecipeContainer.appendChild(clone)
-        
+            featuredRecipeContainer.appendChild(clone)
+
+        })
     })
-})
 
 
 /* Create search results cards */
 class Card {
 
-    constructor({ strMeal, strMealThumb, strCategory, strArea }) {
+    constructor({ idMeal,strMeal, strMealThumb, strCategory, strArea }) {
+        this.id = idMeal
         this.name = strMeal
         this.category = strCategory
         this.image = strMealThumb;
@@ -47,14 +49,16 @@ class Card {
         /* function to limit the length of the meal title */
         const formatName = (name) => name.indexOf(",") === -1 ? name : name.slice(0, name.indexOf(","))
 
-        const cardElement = `<div class="card-main">
+        const cardElement = `<div class="card-main" id="${this.id}">
             <div class='card-main-image-container'>
-            <img src='${this.image}/preview' alt='${this.name}'>
+            <img src='${this.image}' alt='${this.name}'>
             </div>
-            <div class='recipe-details'>
+            <div class='card-recipe-details'>
             <p class='dish-origin'>${this.origin}</p>
+            <div>
             <h2 class='dish-name'>${formatName(this.name)}</h2>
             <p class='dish-category'>${this.category}</p> 
+            </div>
             </div>
             </div>`
 
@@ -71,11 +75,18 @@ const showRecipe = (data) => {
 
     for (const meal of data) {
 
-        const card = new Card(meal)
+        if (meal.strMealThumb) {
 
-        card.display()
+            const card = new Card(meal)
+
+            card.display()
+
+        }
 
     }
+
+    contentHeader.innerText = "Search Results"
+    featuredRecipeContainer.style.display = "none"
 }
 
 
@@ -95,6 +106,8 @@ const searchRecipe = async () => {
         const data = await res.json()
 
         data?.meals ? showRecipe(data.meals) : alert("recipe not found")
+
+        userInput.value = ""
     }
 
     catch (error) {

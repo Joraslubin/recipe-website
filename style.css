@@ -2,7 +2,7 @@
 
 :root {
 
-    --main-color: #638889;
+    --main-color: seagreen;
     --secondary-color:#9DBC98;
 }
 
@@ -113,7 +113,7 @@ li:hover {
 #content {
     width:100%;
     min-height:100vh;
-    padding:1.5rem;
+    padding:1.5rem 3em;
     display:flex;
     justify-content: space-between;
 }
@@ -122,12 +122,36 @@ li:hover {
 #main-section {
     width:60%;
     padding-right:1em;
-}
+
+    #content-header{
+        font-family: "MontSerrat",sans-serif;
+        margin-bottom: 1em;
+        font-weight: 900;
+        font-size:1.3rem;
+        display: flex;
+        align-items: center;
+        gap:0.4em;
+
+        svg{
+            fill:red;
+        }
+
+        span{
+            color:var(--main-color);
+        }
+    }
+
+    #content-header:hover{
+        text-decoration: underline;
+    }
+
+
+    }
 
 #featured-recipes-container {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-gap:2em;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap:1.5em;
 
 
     .featured-recipe {
@@ -137,31 +161,47 @@ li:hover {
 
         .recipe-thumbnail-container {
             width: 100%;
-            height:70%;
+            min-height:70%;
 
             img{
                 width:100%;
                 height: 100%;
                 object-fit: cover;
+                border-radius:.1rem;
+                transition: .5s scale;
+                cursor: pointer;
             }
-
+            
+            img:hover {
+                scale:1.05;
+            }
         }
 
     
         .recipe-details {
             font-family: "Poppins",sans-serif;
             text-align: center;
-            flex-grow: 1;
             font-size: 0.8rem;
             display:flex;
             flex-direction: column;
-            padding-top:1em;
-            gap:.5em;
+            justify-content: space-around;
+            padding-top:.3em;
+            flex-grow: 1;
+           
 
             svg{
-                fill:var(--main-color);
-                width:1.2em;
-                height:1.2em;
+                fill:#FF9A00;
+                width:1.3em;
+                height:1.3em;
+            }
+
+            h2 {
+                cursor:pointer;
+            }
+
+            h2:hover {
+                text-decoration: underline;
+                color: var(--main-color);
             }
 
         
@@ -169,7 +209,9 @@ li:hover {
 
         .meal-origin{
             text-transform: uppercase;
-            margin-bottom:1em;
+            color:#EE4E4E;
+            margin-bottom: .2em;
+            font-weight: 600;
         }
     }
 }
@@ -178,23 +220,23 @@ li:hover {
     display: flex;
     width:100%;
     height:3.1em;
-    margin-bottom: 2em;
+    margin-bottom: 4em;
     align-items: center;
 
     input {
-        width:90%;
+        width:92%;
         height:100%;
-        padding-inline:2em;
+        padding-inline:1.5em;
         outline: none;
         border:1px solid var(--main-color);
 
-        font-size: 1.25rem;
-        font-family: 'MontSerrat',sans-serif;
+        font-size: 1.15rem;
+        font-family: 'Poppins',sans-serif;
     }
 
     div{
          height:100%;
-         width:10%;
+         width:8%;
          display:flex;
          align-items: center;
          justify-content: center;
@@ -211,54 +253,79 @@ li:hover {
 }
 
 
+
 #search-results{
     display:grid;
     grid-template-columns: repeat(auto-fill,minmax(25%,1fr));
-    grid-auto-rows: 250px;
     grid-gap:1em;
+
+    #search-results-header {
+        font-family: "MontSerrat",sans-serif;
+        margin-bottom: 1.5em;
+        display:none;
+    }
 }
 
 #sidebar {
     width:35%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
 }
 
 #sidebar > div {
-    width: 80%;
+    width: 75%;
     margin-bottom: 2em;
 }
 
 .card-main {
     display: flex;
     flex-direction: column;
-    border:1px solid var(--secondary-color);
     border-radius: .1rem;
-    font-family: 'MontSerrat',sans-serif;
-    font-size: 0.8em;
+    font-family: 'Poppins',sans-serif;
+    font-size: 0.8rem;
+
 
     .card-main-image-container{
-        max-height:65%;
+        max-height:70%;  
+        
+        img{
+            border-radius: 0.1rem;
+            transition: scale .3s;
+            cursor:pointer;
+        }
+
+        img:hover{
+            scale: 1.05; 
+        }
     }
 
-    .recipe-details {
-        width:100%;
+    .card-recipe-details {
+        flex-grow: 1;
         display:flex;
         flex-direction: column;
-        padding: .3em .5em;
-        gap:.2em;
-    }
+        text-align: center;
+        padding-block:.5em;
 
-    
-    p{
-        color:darkslateblue;
-        text-transform:uppercase;    
-    }
-
-        img{ 
-            object-fit: cover;
+        p{
+            color:#EE4E4E;
+            text-transform: uppercase;
+            font-weight: 600;
         }
+
+        div{
+            margin-top:0.4em;
+        }
+
+        h2:hover{
+            color: var(--main-color);
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+    }
+
+   
 
 }
 
