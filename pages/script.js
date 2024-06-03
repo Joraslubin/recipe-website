@@ -4,7 +4,7 @@ const mealName = document.querySelector("#meal-name")
 const mealThumbnail = document.querySelector("#meal-thumbnail > img")
 const ingredientsContainer = document.querySelector("#ingredient-container > ul")
 const instructionsStepsContainer = document.querySelector("#instructions-steps-container")
-const id = "53038";//localStorage.getItem("recipeId")
+const id = localStorage.getItem("id")
 
 
 
@@ -74,6 +74,8 @@ const getRecipe = async () => {
         const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`
         const res = await fetch(url)
         const data = await res.json()
+
+        console.log(data.meals[0].strInstructions)
 
         const formatedData = formatData((data.meals)[0])
 

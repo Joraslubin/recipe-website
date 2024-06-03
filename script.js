@@ -11,7 +11,12 @@ let interval;
 let paused = false;
 
 
-/* Display featured recipes at homepage */
+/*function that identifies the recipe card clicked on the homepage and display the correct recipe instructions page */
+
+const redirectUser = (e)=>{
+    localStorage.setItem("id",e.target.dataset.id)
+}
+/* Dinamically adding featured recipes on the homepage */
 fetch("./featured-recipes.json")
     .then(res => res.json())
     .then(data => {
@@ -21,15 +26,15 @@ fetch("./featured-recipes.json")
         recipes.forEach(recipe => {
 
             const clone = featuredRecipeTemplate.content.cloneNode(true)
-            clone.firstElementChild.dataset.id = recipe.id
 
             clone.querySelector(".meal-image").src = recipe.img
-            clone.querySelector(".meal-title").innerText = recipe.name;
+            clone.querySelector(".meal-title").innerHTML = `<a href="./pages/recipe.html" class="recipe-link" data-id="${recipe.id}" target="_blank">${recipe.name}</a>`
             clone.querySelector(".meal-origin").innerText = recipe.origin
 
             featuredRecipeContainer.appendChild(clone)
 
         })
+
     })
 
 
@@ -49,14 +54,14 @@ class Card {
         /* function to limit the length of the meal title */
         const formatName = (name) => name.indexOf(",") === -1 ? name : name.slice(0, name.indexOf(","))
 
-        const cardElement = `<div class="card-main" id="${this.id}">
+        const cardElement = `<div class="card-main">
             <div class='card-main-image-container'>
             <img src='${this.image}' alt='${this.name}'>
             </div>
             <div class='card-recipe-details'>
             <p class='dish-origin'>${this.origin}</p>
             <div>
-            <h2 class='dish-name'>${formatName(this.name)}</h2>
+            <h2 class='dish-name'><a href="./pages/recipe.html" class="recipe-link" id="${this.id}" target="_blank" }>${formatName(this.name)}</a></h2>
             <p class='dish-category'>${this.category}</p> 
             </div>
             </div>
@@ -116,12 +121,21 @@ const searchRecipe = async () => {
 
 }
 
+
+
 searchBtn.addEventListener("click", searchRecipe)
 window.addEventListener("keydown", ({ key }) => {
 
     key === "Enter" ? searchRecipe() : ''
 })
 
+
+document.querySelectorAll(".homepage-card-container").forEach(container=>{
+
+    container.addEventListener("click",(e)=>{
+        console.log(e.target)
+        })
+})
 
 
 /*slide between card in the sidebar manually*/
