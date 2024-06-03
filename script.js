@@ -11,11 +11,7 @@ let interval;
 let paused = false;
 
 
-/*function that identifies the recipe card clicked on the homepage and display the correct recipe instructions page */
 
-const redirectUser = (e)=>{
-    localStorage.setItem("id",e.target.dataset.id)
-}
 /* Dinamically adding featured recipes on the homepage */
 fetch("./featured-recipes.json")
     .then(res => res.json())
@@ -61,7 +57,7 @@ class Card {
             <div class='card-recipe-details'>
             <p class='dish-origin'>${this.origin}</p>
             <div>
-            <h2 class='dish-name'><a href="./pages/recipe.html" class="recipe-link" id="${this.id}" target="_blank" }>${formatName(this.name)}</a></h2>
+            <h2 class='dish-name'><a href="./pages/recipe.html" class="recipe-link" data-id="${this.id}" target="_blank">${formatName(this.name)}</a></h2>
             <p class='dish-category'>${this.category}</p> 
             </div>
             </div>
@@ -133,7 +129,12 @@ window.addEventListener("keydown", ({ key }) => {
 document.querySelectorAll(".homepage-card-container").forEach(container=>{
 
     container.addEventListener("click",(e)=>{
-        console.log(e.target)
+        
+        if(e.target.classList.contains("recipe-link")){
+
+            localStorage.setItem("id",e.target.dataset.id)
+        }
+
         })
 })
 
